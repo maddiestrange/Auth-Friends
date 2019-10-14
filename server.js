@@ -64,10 +64,11 @@ app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
   if (username === 'Lambda School' && password === 'i<3Lambd4') {
     req.loggedIn = true;
+    console.log(req.loggedIn)
     res.status(200).json({
       payload: token
     });
-  } else {
+  } else { 
     res
       .status(403)
       .json({ error: 'Username or Password incorrect. Please see Readme' });
